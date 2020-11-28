@@ -1,12 +1,12 @@
 import State from '../state.js';
 
-const state = new State({
-  posts: [],
-});
-
 class BlogCards extends HTMLElement {
   connectedCallback() {
-    state.subscribe(state => {
+    this.state = new State({
+      posts: [],
+    });
+
+    this.state.subscribe(state => {
       this.displayPosts(state.posts);
     });
 
@@ -17,7 +17,7 @@ class BlogCards extends HTMLElement {
     this.innerHTML = `<p>Loading...</p>`;
 
     setTimeout(() => {
-      state.posts = [
+      this.state.posts = [
         { name: 'Post 1' },
         { name: 'Post 2' },
         { name: 'Post 3' },
