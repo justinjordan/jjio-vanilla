@@ -5,9 +5,7 @@ const state = new State({
 });
 
 class BlogCards extends HTMLElement {
-  constructor() {
-    super();
-
+  connectedCallback() {
     state.subscribe(state => {
       this.displayPosts(state.posts);
     });

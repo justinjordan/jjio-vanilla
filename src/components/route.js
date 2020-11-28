@@ -1,10 +1,6 @@
 class Route extends HTMLElement {
-  constructor() {
-    super();
-
-    this.update = this.update.bind(this);
-
-    addEventListener('hashchange', this.update);
+  connectedCallback() {
+    addEventListener('hashchange', this.update.bind(this));
     this.update();
   }
 

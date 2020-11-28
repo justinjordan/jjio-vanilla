@@ -1,7 +1,5 @@
 class Layout extends HTMLElement {
-  constructor() {
-    super();
-
+  connectedCallback() {
     this.innerHTML = `<header class="bg-white shadow-md p-4">
       <div class="container mx-auto">
         <a href="#/">

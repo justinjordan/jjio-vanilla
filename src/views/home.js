@@ -1,9 +1,7 @@
 import '../components/blog-cards.js';
 
 class Home extends HTMLElement {
-  constructor() {
-    super();
-
+  connectedCallback() {
     this.innerHTML = `<blog-cards></blog-cards>`;
   }
 }

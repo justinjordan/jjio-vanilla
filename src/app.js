@@ -3,9 +3,7 @@ import './components/route.js';
 import './views/home.js';
 
 class App extends HTMLElement {
-  constructor() {
-    super();
-
+  connectedCallback() {
     this.innerHTML = `<c-layout>
       <c-route path="/" title="Home | JustinJordan.io">
         <home-page></home-page>
