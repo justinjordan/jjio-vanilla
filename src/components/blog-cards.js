@@ -4,7 +4,7 @@ import './post-image.js';
 import './post-author.js';
 import './post-date.js';
 
-class BlogCards extends HTMLElement {
+customElements.define('blog-cards', class extends HTMLElement {
   connectedCallback() {
     this.state = new State({
       posts: [],
@@ -46,6 +46,4 @@ class BlogCards extends HTMLElement {
       </article>`).join('')}
     </div>`;
   }
-}
-
-customElements.define('blog-cards', BlogCards);
+});

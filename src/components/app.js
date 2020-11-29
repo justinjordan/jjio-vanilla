@@ -3,7 +3,7 @@ import './route.js';
 import '../pages/home-page.js';
 import '../pages/blog-page.js';
 
-class App extends HTMLElement {
+customElements.define('c-app', class extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<c-layout>
       <c-route path="/" title="Home | JustinJordan.io">
@@ -14,6 +14,4 @@ class App extends HTMLElement {
       </c-route>
     </c-layout>`;
   }
-}
-
-customElements.define('c-app', App);
+});

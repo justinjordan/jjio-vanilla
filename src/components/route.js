@@ -5,7 +5,7 @@ export const router = new State({
   args: [],
 });
 
-class Route extends HTMLElement {
+customElements.define('c-route', class extends HTMLElement {
   connectedCallback() {
     addEventListener('hashchange', this.update.bind(this));
     this.update();
@@ -31,6 +31,4 @@ class Route extends HTMLElement {
       this.style.display = 'none';
     }
   }
-}
-
-customElements.define('c-route', Route);
+});

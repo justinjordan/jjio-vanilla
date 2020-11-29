@@ -1,7 +1,5 @@
-class ContactForm extends HTMLElement {
+customElements.define('contact-form', class extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `CONTACT FORM`;
   }
-}
-
-customElements.define('contact-form', ContactForm);
+});

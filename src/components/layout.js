@@ -1,7 +1,7 @@
 import './contact-form.js';
 import './social-icons.js';
 
-class Layout extends HTMLElement {
+customElements.define('c-layout', class extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<header class="bg-white shadow-md p-4 mb-10">
       <div class="container mx-auto max-w-7xl px-8">
@@ -36,6 +36,4 @@ class Layout extends HTMLElement {
      <div class="container mx-auto max-w-7xl px-8"></div>
     </footer>`;
   }
-}
-
-customElements.define('c-layout', Layout);
+});

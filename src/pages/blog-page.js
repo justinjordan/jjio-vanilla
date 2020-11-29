@@ -1,7 +1,8 @@
 import { router } from '../components/route.js';
 import { getPost } from '../api.js';
 
-class BlogPage extends HTMLElement {
+
+customElements.define('blog-page', class extends HTMLElement {
   connectedCallback() {
     router.subscribe(route => {
       const [slug] = route.args;
@@ -25,6 +26,4 @@ class BlogPage extends HTMLElement {
       console.error(e);
     }
   }
-}
-
-customElements.define('blog-page', BlogPage);
+});

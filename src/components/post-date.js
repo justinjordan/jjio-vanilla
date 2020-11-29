@@ -5,7 +5,7 @@ const months = [
   'October', 'November', 'December'
 ];
 
-class PostDate extends HTMLElement {
+customElements.define('post-date', class extends HTMLElement {
   connectedCallback() {
     const rawDate = this.getAttribute('date');
     const date = new Date(rawDate);
@@ -16,6 +16,4 @@ class PostDate extends HTMLElement {
 
     this.innerHTML = `<time datetime="${rawDate}">${month} ${day}, ${year}</time>`;
   }
-}
-
-customElements.define('post-date', PostDate);
+});
