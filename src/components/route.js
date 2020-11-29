@@ -12,7 +12,8 @@ class Route extends HTMLElement {
   }
 
   update() {
-    const currentPath = location.hash.substr(1);
+    scrollTo(0, 0);
+    const currentPath = location.hash.substr(1) || '/';
     const routePath = this.getAttribute('path');
     const routeTitle = this.getAttribute('title');
     const routePattern = new RegExp('^' + routePath.replaceAll('/', '[\\/]+').replaceAll('?', '([^\/]+)') + '$');
