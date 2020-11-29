@@ -1,12 +1,16 @@
-import './components/layout.js';
-import './components/route.js';
-import './views/home.js';
+import './layout.js';
+import './route.js';
+import '../pages/home-page.js';
+import '../pages/blog-page.js';
 
 class App extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<c-layout>
       <c-route path="/" title="Home | JustinJordan.io">
         <home-page></home-page>
+      </c-route>
+      <c-route path="/blog/?" title="JustinJordan.io">
+        <blog-page></blog-page>
       </c-route>
     </c-layout>`;
   }

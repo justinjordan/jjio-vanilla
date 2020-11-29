@@ -30,7 +30,7 @@ class BlogCards extends HTMLElement {
 
   renderPosts(posts) {
     this.innerHTML = `<div class="grid grid-cols-2 gap-6">
-      ${posts.map(post => `<article class="bg-white rounded-lg shadow-md overflow-hidden">
+      ${posts.map(post => `<article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg">
         <a href="#/blog/${post.slug}">
           <div>
             <post-image image-id="${post.featured_media}"></post-image>

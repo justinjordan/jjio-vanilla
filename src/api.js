@@ -26,7 +26,6 @@ export async function getPostAuthor(id) {
 
   const response = await fetch(url);
   return cache[url] = await response.json();
- 
 }
 
 export async function getPosts() {
@@ -45,3 +44,14 @@ export async function getPosts() {
     };
   });
 };
+
+export async function getPost(slug) {
+  const url = `${env.wpHost}/wp-json/wp/v2/posts?slug=${slug}`;
+
+  if (cache[url]) {
+    return cache[url];
+  }
+
+  const response = await fetch(url);
+  return cache[url] = (await response.json())[0];
+}
