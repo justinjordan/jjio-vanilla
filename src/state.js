@@ -8,7 +8,7 @@ export default class State {
           case 'subscribe':
             return callback => {
               if (typeof callback !== 'function') {
-                throw new Error('onChange callback must be a function');
+                throw new Error('Subscribe callback must be a function');
               }
               this.subscribers.push(callback);
               callback(state, state);
