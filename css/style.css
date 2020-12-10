@@ -1,1 +1,12 @@
+@import './colors.css';
 @import './blog.css';
+
+.social-icon {
+  font-size: 2em;
+  text-decoration: none !important;
+  color: var(--white) !important;
+}
+
+.social-icon:hover {
+  color: var(--secondary) !important;
+}
